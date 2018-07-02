@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="css/titatoggle-dist-min.css">
+    <link rel="stylesheet" href="css/snackbar.min.css">
+    <link rel="icon" type="image/png" href="css/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="css/favicon-16x16.png" sizes="16x16" />
+
+    <title>Plutonium MW3 CFG generator</title>
+</head>
+<body>
+<div class="jumbotron bg" style="z-index: 0;">
+        <div class="overlay"></div>
+        <div class="inner">
+            <div class="container">
+           
+
+                        <h2 class="display-4 text-center heading-site">PLUTONIM CFG GENERATOR</h2>
+                        <p class="lead text-center lead-site">Generate your customized cfg with only one click!</p>
+                        
+                        <div class="button-box col-lg-12">
+
+                                    <a href="https://forum.plutonium.pw/topic/160/server-setup"  target="_blank">
+                                        <button class="btn btn-primary btn-lg">Guide for servers </button>
+                                    </a>
+                            
+
+                                    <a href="https://cdn.plutonium.pw/updates/pu/1.0.4/PU.exe" target="_blank">
+                                        <button class="btn btn-info btn-lg">Download CLI</button>
+                                    </a>
+                            
+
+                                    <a href="https://forum.plutonium.pw" target="_blank">
+                                        <button type="button" class="btn btn-warning btn-lg ">plutonium Forum</button>
+                        
+                                        </a>
+
+
+                                                </div>
+                           </div>
+        
+             
+
+        </div>
+    </div>
+
+            <form id="form-generate">
+
+            <section class="generate">
+
+                <div class="container justify-content-center ">
+                    
+                        <div class="alert alert-dismissible alert-success text-center">
+                                <strong>Notice : </strong>If you clicked generate the default cfg will be generated </a>.
+                              </div>
+                            
+                                  <br>
+                                <h1 class="text-center ">Modern Warfare 3 Server Configuration</h1><Br>
+                    <div class="row">
+
+                        <div class="col-md-5">
+
+                                <div class="form-group">
+                                        <label class="col-form-label" for="servername">Server Name</label>
+                                        <input type="text" class="form-control" placeholder="EXAMPLE : DEATH MATCH 24/7" id="servername">
+                                      </div>
+                        </div>
+
+                        
+                        <div class="col-md-5">
+
+                                <div class="form-group">
+                                        <label class="col-form-label" for="max">MAX players</label>
+                                        <input type="text" min="1" max="18" class="form-control" placeholder="Default 16 Players" id="max">
+                                      </div>
+                        </div>
+
+                        <div class="col-md-2">
+
+                                <div class="form-group">
+                                        <label class="col-form-label" for="port">PORT</label>
+                                        <input type="text" class="form-control" placeholder="default : 27014" id="port">
+                                      </div>
+                        </div>
+
+                        <div class="col-md-5">
+
+                                <div class="form-group">
+                                        <label class="col-form-label" for="maps">Map rotation</label>
+                                        <input type="text" class="form-control" placeholder="default" id="maps">
+                                      </div>
+
+                       </div>
+
+                       <div class="col-md-5">
+
+                            <div class="form-group">
+                                    <label class="col-form-label" for="password">Server Password</label>
+                                    <input type="text" class="form-control" placeholder="Leave it empty if you dont want any password" id="password">
+                                  </div>
+
+                   </div>
+                   <div class="col-md-2">
+
+                        <div class="form-group">
+                                <label class="col-form-label" for="rconpassword">RCON PASSWORD</label>
+                                <input type="text" class="form-control" placeholder="RCON Password" id="rcpass">
+                              </div>
+
+               </div>
+
+           
+                        </div>
+                        
+    
+                    </div>
+                </div>
+
+            
+
+               
+
+               <div class="container">
+                  
+<Br><Br>
+                   <div class="row"> 
+                        <div class="col-md-5">
+                                <h5 class="">Toggle allowing dead players to chat with living players </h5><Br>
+                                <div class="form-group">
+                                        
+    
+                                    <button type="button" class="btn btn-lg btn-toggle" data-toggle="button"id="chat" name="chat" aria-pressed="false" autocomplete="off">
+                                        <div class="handle"></div>
+                                      </button>
+                                      
+             
+                                </div>
+                            </div>
+    
+                
+                    <div class="col-md-5">
+                            <h5 class="">Toggle voting for [player kick/map restart/next map] </h5><Br>
+                            <div class="form-group">
+                                    
+
+                                <button type="button" class="btn btn-lg btn-toggle active" data-toggle="button" id="kick" name="kick" aria-pressed="true" autocomplete="off">
+                                    <div class="handle"></div>
+                                  </button>
+                                  
+         
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-md-2">
+                                <div class="form-group">
+                                     
+                                    <label for="inactive">inactivity Time</label><Br>
+                                    <input type="text"  name="inactive" id="inactive" min="120" max="1000" class="form-control" placeholder="Time in seconds">
+             
+                                </div>
+                            </div>
+                </div>
+               </div>
+            </section>
+            <Br><Br>
+            <div class="form-group text-center">
+
+                    <button type="submit" id="generate" class="btn btn-success btn-lg " data-toggle="modal" data-target=".bd-example-modal-lg">GIMME MY CFG</button>
+                </div>
+        </form>
+
+
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                <div class="spinner text-center" id="loading">
+
+                        <h1 class="text-center">MAGIC IS HAPENING </h1>
+                        <img  width="5" class="col-md-5"src="css/spinner-loop.gif" alt="">
+                       </div>
+            <div class="container" id="container-result">
+
+            </div>
+
+        </div>
+        <div class="modal-footer d-copy" id="download">
+                <a href="#"  class="btn btn-danger" id="download">Download</a>
+
+                <button type="button" id="copy"     class="btn btn-primary">COPY</button>
+        </div>
+    </div>
+
+    </div>
+  </div>
+
+     
+  <section id="footer" class="footer">
+        <div class="container">
+        
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                    <p>PLUTONIM &COPY 2018</p>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </section>
+          
+
+            <script src="js/jquery-3.1.1.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/snackbar.min.js"></script>
+            <script>
+                    $("#copy").click(function(){
+                   $("textarea").select();
+                          document.execCommand('copy');
+
+
+                          Snackbar.show({
+                                text: "COPIED TO CLIPBOARD",
+                                pos: 'top-right'
+                            });
+
+                             document.getElementById('copy').textContent = "copy";
+
+                                setTimeout(function(){
+
+                             document.getElementById('copy').textContent = "COPY AGAIN ?";
+
+
+                                },2000);
+
+                             document.getElementById('copy').textContent = "copy";
+
+                            });
+                    </script>
+           <script>
+           
+           var anchor = document.querySelector('a#download');
+             anchor.onclick = function(e) {
+
+            var textbox_text = document.querySelector('textarea').value;
+
+            var textbox_file = new Blob([textbox_text], {"type":"application/bat"});  
+            anchor.href = URL.createObjectURL(textbox_file);
+            anchor.download = "server.cfg";
+        };</script>
+            <script src="js/config.js"></script>
+</body>
+</html>
