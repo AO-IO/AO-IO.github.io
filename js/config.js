@@ -9,7 +9,7 @@ form.addEventListener('submit',function(e){
     document.getElementById('container-result').style.display = "none";
      document.querySelector('.modal-title').textContent = "GENERATING ...";
 
-    setTimeout(generateCfg,4000)
+    setTimeout(generateCfg,3000)
     
     e.preventDefault();
 });
