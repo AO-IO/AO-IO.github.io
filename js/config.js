@@ -13,7 +13,7 @@ form.addEventListener('submit',function(e){
      document.querySelector('.modal-title').textContent = "GENERATING ...";
     
 
-    setTimeout(generateCfg,1000)
+    setTimeout(generateCfg,500)
     
     e.preventDefault();
 });
