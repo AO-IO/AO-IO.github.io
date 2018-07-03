@@ -9,7 +9,7 @@ form.addEventListener('submit',function(e){
     document.getElementById('container-result').style.display = "none";
      document.querySelector('.modal-title').textContent = "GENERATING ...";
 
-    setTimeout(generateCfg,3000)
+    setTimeout(generateCfg,100)
     
     e.preventDefault();
 });
@@ -25,14 +25,15 @@ function generateCfg(){
 let servername = document.getElementById('servername');
 let max = document.getElementById('max');
 let port = document.getElementById('port');
-let maps = document.getElementById('maps');
-let password = document.getElementById('password');
+let maps = document.getElementById('maps')
+// let mp_value = Array.from(maps.selectedOptions).map(option => option.value);
 let rcpass = document.getElementById('rcpass');
 let chat = document.getElementById('chat');
 let kick = document.getElementById('kick');
 let inactive = document.getElementById('inactive');
 let loading = document.getElementById('loading');
 let activity = document.getElementById('activity');
+let flood2 = document.getElementById('flood2');
 let loadTime = window.performance.timing.domContentLoadedEventEnd- window.performance.timing.navigationStart;
 
     Snackbar.show({
@@ -41,7 +42,7 @@ let loadTime = window.performance.timing.domContentLoadedEventEnd- window.perfor
     });
 
 
-
+    
     let header0 = "// PLUTONIUM MW3 CFG GENERATOR  \n";
     let header1 = "// Modern Warfare 3 Server Configuration";
     let header2 = " //////////////////////////////////////////////////////////";
@@ -60,7 +61,7 @@ let loadTime = window.performance.timing.domContentLoadedEventEnd- window.perfor
     let mprot = `
 // Dedicated server play list (DSPL) specifying server map rotation.
 // Valid game options are controlled via DSR (dedicated server recipe) specified in the DSPL.\n
-seta sv_maprotation "${(maps.value == "") ? "default" : maps.value}" \n`;
+seta sv_maprotation ${(maps.value == "") ? '"default"' : `"${maps.value}"` } \n`; 
     let mxpl = `
 // Maximum number of clients that may connect to this server (range 1-18)\n
 seta sv_maxclients ${(max.value =="" ? 16 : max.value)} \n`
@@ -106,7 +107,7 @@ seta sv_kickBanTime 300 \n`
     let flood = `
 
 // Toggle flood protection (throttling of user commands - should be enabled for non-password-protected Internet servers) (0 or 1 (default)) \n
-seta sv_floodProtect 1 \n`
+seta sv_floodProtect ${flood2.getAttribute('aria-pressed') === "false" ? 0 : 1} \n`
 
     svhost.replace(/\r?\n/g, '<br />');
 
@@ -137,8 +138,7 @@ seta sv_floodProtect 1 \n`
     +inact
     +ban
     +flood
-
-
+   
 
     document.getElementById('container-result').appendChild(textareaInput);
     document.getElementById('loading').style.display = "none";

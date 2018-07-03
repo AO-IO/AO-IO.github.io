@@ -27,7 +27,7 @@
                             
                                 <a href="https://forum.plutonium.pw" target="_blank">
                                     <button type="button" class="btn btn-warning btn-lg ">plutonium Forum</button>
-            
+        
                                     </a>
                                     <a href="https://forum.plutonium.pw/topic/160/server-setup"  target="_blank">
                                         <button class="btn btn-primary btn-lg">Guide for servers </button>
@@ -70,7 +70,7 @@
                                       </div>
                         </div>
 
-                        
+                      
                         <div class="col-md-5">
 
                                 <div class="form-group">
@@ -87,15 +87,7 @@
                                       </div>
                         </div>
 
-                        <div class="col-md-5">
-
-                                <div class="form-group">
-                                        <label class="col-form-label" for="maps">Map rotation</label>
-                                        <input type="text" class="form-control" placeholder="default" id="maps">
-                                      </div>
-
-                       </div>
-
+                
                        <div class="col-md-5">
 
                             <div class="form-group">
@@ -104,7 +96,8 @@
                                   </div>
 
                    </div>
-                   <div class="col-md-2">
+
+                   <div class="col-md-3">
 
                         <div class="form-group">
                                 <label class="col-form-label" for="rconpassword">RCON PASSWORD</label>
@@ -112,7 +105,14 @@
                               </div>
 
                </div>
+               <div class="col-md-4">
 
+                    <div class="form-group">
+                            <label class="col-form-label" for="inactive">Inactiviy time</label>
+                            <input type="text"  name="inactive" id="inactive" min="120" max="1000" class="form-control" placeholder="Time in seconds">
+                        </div>
+
+           </div>
            
                         </div>
                         
@@ -120,60 +120,88 @@
                     </div>
                 </div>
 
-            
+                <section class="map-rotation ">
 
-               
 
-               <div class="container">
-                  
-<Br><Br>
-                   <div class="row"> 
-                        <div class="col-md-5">
-                                <h5 class="">Toggle allowing dead players to chat with living players </h5><Br>
-                                <div class="form-group">
-                                        
+                        <div class="container">
+    <Br><BR>
+                            <h3 class="text-center">MAP ROTATION</h3>
     
-                                    <button type="button" class="btn btn-lg btn-toggle" data-toggle="button"id="chat" name="chat" aria-pressed="false" autocomplete="off">
-                                        <div class="handle"></div>
-                                      </button>
-                                      
-             
-                                </div>
-                            </div>
-    
-                
-                    <div class="col-md-5">
-                            <h5 class="">Toggle voting for [player kick/map restart/next map] </h5><Br>
                             <div class="form-group">
-                                    
+                                    <div class="col-xs-5">
 
-                                <button type="button" class="btn btn-lg btn-toggle active" data-toggle="button" id="kick" name="kick" aria-pressed="true" autocomplete="off">
-                                    <div class="handle"></div>
-                                  </button>
-                                  
-         
-                            </div>
-                        </div>
-
-                        
-                        <div class="col-md-2">
-                                <div class="form-group">
-                                     
-                                    <label for="inactive">inactivity Time</label><Br>
-                                    <input type="text"  name="inactive" id="inactive" min="120" max="1000" class="form-control" placeholder="Time in seconds">
-             
+                                          <input type="text" class="form-control" name="maps" id="maps" placeholder="mp_dome mp_map (Seperate your Maps with Comma ,)">
+                                        </select>
+                                    </div>
                                 </div>
+    
+                        </div>
+    
+                   </section>
+                   <hr>
+
+<Br><br>
+                <section class="toggles">
+                        <div class="container">
+                  
+
+                                <div class="row"> 
+                                     <div class="col-lg ml-5">
+                                             <h6 class="">Allow to chat with dead players</h6><Br>
+                                             <div class="form-group">
+                                                 <button type="button" class="btn btn-lg btn-toggle" data-toggle="button"id="chat" name="chat" aria-pressed="false" autocomplete="off">
+                                                     <div class="handle"></div>
+                                                   </button>
+                                                
+                                             </div>
+                                         </div>
+                 
+                             
+                                 <div class="col-lg ml-5">
+                                         <h6 class="">[player kick/map restart/next map]</h6><Br>
+             
+                                         <div class="form-group">
+                                                 
+             
+                                             <button type="button" class="btn btn-lg btn-toggle active" data-toggle="button" id="kick" name="kick" aria-pressed="true" autocomplete="off">
+                                                 <div class="handle"></div>
+                                               </button>
+                                               
+                      
+                                         </div>
+                                     </div>
+                                
+                                     <div class="col-lg ml-5">
+                                             <h6 class="">Toggle flood protection</h6><Br>
+                                             <div class="form-group">
+                                                 <button type="button" class="btn btn-lg btn-toggle active" data-toggle="button" id="flood2" name="flood2" aria-pressed="true" autocomplete="off">
+                                                     <div class="handle"></div>
+                                                   </button>
+                                             </div>
+                                         </div>
+                             </div>
                             </div>
-                </div>
-               </div>
-            </section>
+
+                </section>
+              
+
+               <Br><BR><hr>
+
+              
+      
             <Br><Br>
             <div class="form-group text-center">
 
                     <button type="submit" id="generate" class="btn btn-success btn-lg " data-toggle="modal" data-target=".bd-example-modal-lg">GIMME MY CFG</button>
                 </div>
+
+
+
+
+
         </form>
 
+    </section>
 
 <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -221,7 +249,7 @@
                     
                     </p>
                 </div>
-                <hr>
+               
             </div>
         </div>
     </footer>
@@ -266,5 +294,7 @@
             anchor.download = "server.cfg";
         };</script>
             <script src="js/config.js"></script>
+     
+                    
 </body>
 </html>
