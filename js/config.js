@@ -4,12 +4,16 @@ let form = document.getElementById('form-generate');
 
 form.addEventListener('submit',function(e){
 
+    let modal = document.querySelector('.modal');
+
+  
     document.getElementById('loading').style.display = "block";
     document.getElementById('download').style.display = "none";
     document.getElementById('container-result').style.display = "none";
      document.querySelector('.modal-title').textContent = "GENERATING ...";
+    
 
-    setTimeout(generateCfg,3000)
+    setTimeout(generateCfg,1000)
     
     e.preventDefault();
 });
