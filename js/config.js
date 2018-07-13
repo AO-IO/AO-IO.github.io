@@ -1,4 +1,5 @@
 // HOW NOT TO CODE 101
+let modal = document.querySelector('.modal');
 
 let form = document.getElementById('form-generate');
 
@@ -38,7 +39,6 @@ let inactive = document.getElementById('inactive');
 let loading = document.getElementById('loading');
 let activity = document.getElementById('activity');
 let flood2 = document.getElementById('flood2');
-let loadTime = window.performance.timing.domContentLoadedEventEnd- window.performance.timing.navigationStart;
 
     Snackbar.show({
         text: "GENERATED successfully",
@@ -146,7 +146,7 @@ seta sv_floodProtect ${flood2.getAttribute('aria-pressed') === "false" ? 0 : 1} 
 
     document.getElementById('container-result').appendChild(textareaInput);
     document.getElementById('loading').style.display = "none";
-    document.querySelector('.modal-title').textContent = "GENERATED in "+ loadTime / 1000  + " Seconds";
+    document.querySelector('.modal-title').textContent = "GENERATED SuccessFully";
     document.getElementById('download').style.display = "block";
 
    
@@ -157,3 +157,10 @@ seta sv_floodProtect ${flood2.getAttribute('aria-pressed') === "false" ? 0 : 1} 
 
 }
 
+window.onload = function () {
+    let loadTime = window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart;    
+    let html = document.getElementById('loading-time');
+  
+    
+    html.appendChild(document.createTextNode(`${loadTime/1000} Seconds`));
+}
