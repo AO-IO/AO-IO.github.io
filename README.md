@@ -1,4 +1,4 @@
 # Plutonium-cfg-generator 
 A simple Page to generate your own MW3 cfg 
 
-<a href="https://ao-io.github.io/">https://ao-io.github.io/</a>
+<a href="https://plutonium-mw3.github.io/">plutonium-mw3.github.io</a>
